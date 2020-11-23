@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/* CSS ABOUT PC AND MOBILE */
+nav li a {
+    color: white !important;
+    font-size: 1.5em;
+}
+
+nav .dropdown-item {
+    color: black !important;
+    font-size: 1.3em;
+}
+
+
+nav .dropdown-item:hover {
+    color: white !important;
+}
+
+nav .nav-item:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+/* CSS ABOUT PC ONLY */
+@media (min-width: 992px) {
+    nav .nav-item {
+        margin-left: 30px;
+    }
+
+    nav .navbar-brand img {
+        width: 250px;
+        margin-top: -20px;
+    }
+}
+
+/* CSS ABOUT MOBILE ONLY */
+@media (max-width: 991px) {
+    nav li a {
+        margin-left: 15px;
+    }
+}
