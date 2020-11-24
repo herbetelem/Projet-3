@@ -20,5 +20,13 @@ from mysite import views
 urlpatterns = [
     # path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('hebergement/', views.hebergement, name='hebergement'),
+    path('hebergement/', views.housing, name='hebergement'),
+    path('profil/', views.profil, name='profil'),
+    path('annonce/', views.browse_ad, name='annonce'),
+    path('alerte/', views.alert, name='alerte'),
+    path('mon_calendrier/', views.my_calendar, name='mon_calendrier'),
+    path('calendrier_user/', views.user_calendar, name='calendrier_user'),
+    path('recherche_hebergement/', views.housing_search, name='recherche_hebergement'),
+    path('se_connecter/', views.login, name='se_connecter'),
+
 ]

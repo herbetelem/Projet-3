@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="{% static 'css/bootswatch.css' %}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css' rel='stylesheet'>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    
     <title>{% block title%} {%endblock%}</title>
 </head>
 
@@ -16,7 +19,7 @@
     <div class="container-fluid">
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/">
                 <img src="{% static 'assets/nav_footer/logo.png' %}" alt="logo All4animals" title="Logo">
             </a>
             <!-- button burger -->
@@ -28,17 +31,20 @@
 
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                            aria-haspopup="true" aria-expanded="false">Alert</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/alerte">Alerte</a>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="# role="button"
+                            aria-haspopup="true" aria-expanded="false">Alerte</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">J'ai perdu mon animal</a>
                             <a class="dropdown-item" href="#">J'ai trouvé un animal</a>
                             <a class="dropdown-item" href="#">J'ai vu un animal</a>
                         </div>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Parcourir les annonces</a>
+                        <a class="nav-link" href="/annonce">Parcourir les annonces</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/hebergement">Hébergement</a>
@@ -46,14 +52,19 @@
                 </ul>
             </div>
             <div class="col-md-1 offset-md-5 offset-sm-0">
-                <a class="navbar-profil" href="#">
+                <a class="navbar-profil" href="/profil">
                     <img src="{% static 'assets/nav_footer/profil.png' %}" alt="logo All4animals" title="Logo">
                 </a>
             </div>
         </nav>
     </div>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    {% block body%} {%endblock%}
+    
 </body>
 
 </html>
