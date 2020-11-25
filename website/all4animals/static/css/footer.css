@@ -1,0 +1,56 @@
+footer{
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 13vh;
+    background: #78c2ad; 
+}
+
+.footer div{
+    margin: auto;
+}
+
+.footer{
+    display: flex;
+}
+
+footer ul{
+    text-decoration: none;
+    list-style: none;
+}
+
+footer li a{
+    font-size: 1.3em;
+    color: white;
+}
+
+footer li a:hover{
+    color: white;
+    text-decoration: line;
+}
+
+.block_logo {
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* CSS ABOUT PC ONLY */
+@media (max-width: 992px) {
+    .block_menu, .block_contact{
+        display:none;
+    }
+
+    .block_logo img {
+        width: 100%;
+    }
+    .footer{
+        display: flex;
+    }
+    .block_logo{
+        justify-content: flex-start;
+    }
+
+
+}
