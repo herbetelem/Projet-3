@@ -5,7 +5,7 @@
 
 nav {
     background: #78c2ad;
-    height: 20vh;
+    height: 16vh;
 }
 
 
@@ -67,8 +67,8 @@ nav li a:hover {
     }
 
     .a4_menu_web{
-        height: 20vh;
-        line-height: 20vh;
+        height: 16vh;
+        line-height: 16vh;
     }
 
     nav li {   
