@@ -1,0 +1,26 @@
+.a4_form_place_global div:nth-of-type(1) {
+    padding-left: 0;
+    float: left;
+}
+
+.a4_form_place_global div:nth-of-type(2) {
+    padding-left: 0;
+    padding-right: 0;
+    float: left;
+}
+
+.a4_form_place_global div:nth-of-type(3) {
+    padding-right: 0;
+    float: left;
+}
+
+.a4_cat_alert  div:nth-of-type(1){
+    float: left;
+    padding-left: 0;
+}
+
+
+.a4_cat_alert  div:nth-of-type(2){
+    float: left;
+    padding-right: 0;
+}
