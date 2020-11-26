@@ -1,0 +1,15 @@
+.a4_container_alert{
+    width: 50%;
+    margin: auto;
+    background-color: ;
+    
+}
+
+
+
+
+.container_img_alert, .a4_writing_alert{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

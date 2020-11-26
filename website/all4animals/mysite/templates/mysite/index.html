@@ -1,4 +1,5 @@
 {% extends 'mysite/base.html' %}
+{% load static %}
 
 {% block title%} 
 Index
@@ -7,5 +8,25 @@ Index
 
 {% block body%} 
 <h2> Page d'accueil</h2>
+<section>
+    <div class="a4_container_alert">
+        <div class="a4_writing_alert">
+            <a href="/alerte">
+                <img src="{% static 'assets\home\alert\alert.png' %}" alt="writing'alart" title="Alerte">
+            </a>
+        </div>
+        <div class="container_img_alert">
+            <a href="/alerte">
+                <img src="{% static 'assets\home\alert\dog.png' %}" alt="writing'alart" title="Alerte">
+            </a>
+            <a href="/alerte">
+                <img src="{% static 'assets\home\alert\warning.png' %}" alt="writing'alart" title="Alerte">
+            </a>
+            <a href="/alerte">
+                <img src="{% static 'assets\home\alert\cat.png' %}" alt="writing'alart" title="Alerte">
+            </a>
+        </div>
+    </div>
+</section>
 {%endblock%}
 
