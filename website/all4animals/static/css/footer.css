@@ -7,11 +7,11 @@ footer{
     background: #78c2ad; 
 }
 
-.footer div{
+.a4_footer div{
     margin: auto;
 }
 
-.footer{
+.a4_footer{
     display: flex;
 }
 
@@ -30,7 +30,7 @@ footer li a:hover{
     text-decoration: line;
 }
 
-.block_logo {
+.a4_block_logo {
     width: 70%;
     display: flex;
     justify-content: space-evenly;
@@ -38,19 +38,15 @@ footer li a:hover{
 
 /* CSS ABOUT PC ONLY */
 @media (max-width: 992px) {
-    .block_menu, .block_contact{
-        display:none;
+    .a4_block_menu, .a4_block_contact{
+       display:none;
     }
 
-    .block_logo img {
-        width: 100%;
+    .a4_block_logo img {
+       width: 50px;
     }
-    .footer{
-        display: flex;
+    .a4_block_logo{
+       width: 100%;
     }
-    .block_logo{
-        justify-content: flex-start;
-    }
-
 
 }

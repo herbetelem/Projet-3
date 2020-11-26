@@ -5,6 +5,9 @@ from django.shortcuts import render
 def index(request):
     return render(request, 'mysite/index.html')
 
+def contact(request):
+    return render(request, 'mysite/contact.html')
+
 
 
 
@@ -14,10 +17,6 @@ def profil(request):
 
 def login(request):
     return render(request, 'mysite/profil/login.html')
-
-
-def my_calendar(request):
-    return render(request, 'mysite/profil/my_calendar.html')
 
 
 # Folder alert -----------------------------------------------------------
@@ -37,3 +36,7 @@ def user_calendar(request):
 
 def housing_search(request):
     return render(request, 'mysite/housing/housing_search.html')
+
+def my_calendar(request):
+    return render(request, 'mysite/housing/my_calendar.html')
+

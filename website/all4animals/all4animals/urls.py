@@ -28,5 +28,6 @@ urlpatterns = [
     path('calendrier_user/', views.user_calendar, name='calendrier_user'),
     path('recherche_hebergement/', views.housing_search, name='recherche_hebergement'),
     path('se_connecter/', views.login, name='se_connecter'),
+    path('contact/', views.contact, name='contact'),
 
 ]
