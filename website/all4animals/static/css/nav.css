@@ -5,7 +5,7 @@
 
 nav {
     background: #78c2ad;
-    height: 20vh;
+    height: 10vh;
 }
 
 
@@ -49,7 +49,7 @@ nav li a:hover {
     }
     
     .a4_logo-nav img {
-        height: 40vh;
+        height: 20vh;
         width: auto;
         border: 4px solid white;
         border-radius: 50%;
@@ -58,21 +58,21 @@ nav li a:hover {
     .a4_nav_avatar {
         width: 10%;
         float: left;
-        height: 20vh;
+        height: 10vh;
     }
     
     .a4_nav_avatar img {
-        width: 50%;
-        margin: 25%;
+        width: 20%;
+        margin: 15%;
     }
 
     .a4_menu_web{
-        height: 20vh;
-        line-height: 20vh;
+        height: 10vh;
+        line-height: 10vh;
     }
 
     nav li {   
-        font-size: 3.5vh;
+        font-size: 2.5vh;
         margin-right: 70px;
     }
 
