@@ -43,7 +43,7 @@ footer li a:hover{
 
 /* CSS ABOUT MOBILE ONLY */
 @media (max-width: 992px) {
-    .a4_block_menu, .a4_block_contact{
+    .a4_block_menu, .a4_block_contact, .horizontal_bar{
        display:none;
     }
 
