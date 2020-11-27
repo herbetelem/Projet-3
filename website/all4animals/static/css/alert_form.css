@@ -24,3 +24,7 @@
     float: left;
     padding-right: 0;
 }
+
+.form-group {
+    padding-bottom: 30px !important;
+}
