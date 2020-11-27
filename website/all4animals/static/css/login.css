@@ -1,0 +1,44 @@
+.a4_login{ 
+    width: 25%;
+    margin: auto;
+    border: 5px solid #fcd5ba;
+}
+
+.a4_login .a4_menu_login ul li{
+    font-size: 1.6em;
+    flex-grow: 2;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.a4_login .a4_menu_login ul li:hover{
+    background: #DCDCDC;
+}
+
+.a4_login .a4_menu_login ul{
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+}
+
+.a4_login .a4_container_login{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.a4_container_login input::placeholder{
+    font-weight: normal;
+}
+
+.a4_container_login button{
+    width: 30%;
+}
+
+.a4_container_login .a4_block_login{
+    display: flex;
+    justify-content: center;
+}

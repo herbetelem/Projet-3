@@ -1,9 +1,58 @@
 {% extends 'mysite/base.html' %}
 
-{% block title%} 
+{% block title%}
 Login
 {%endblock%}
 
-{% block body%} 
-<h2> Page login</h2>
+{% block body%}
+<br>
+<br>
+<br>
+<div class=a4_login>
+    <div class="a4_menu_login">
+        <ul>
+            <li>Déjà inscrit ?</li>
+            <li>S'inscrire</li>
+        </ul>
+    </div>
+
+    <form action="/login" method="get" class="login">
+        <fieldset>
+            <div class="">
+                <img src="" alt="" title="">
+            </div>
+
+            <div class="a4_container_login">
+                <div class="a4_block_login">
+                    <p>Connectez-vous avec votre adresse email et votre mot de passe pour accéder à votre espace client.
+                    </p>
+                    
+                </div>
+                <div class="a4_block_login">
+                    <label for="uname">
+                        <input type="text" placeholder="E-mail" name="uname" required>
+                    </label>
+                </div>
+                <div class="a4_block_login">
+                    <label for="psw">
+                        <input type="password" placeholder="Mot de passe" name="psw" required>
+                    </label>
+                </div>
+                <div class="a4_block_login">
+                    <button type="submit">Connexion</button>
+                </div>
+                <div class="a4_block_login">
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+</div>
+<br>
+<br>
+<br>
+<br>
 {%endblock%}

@@ -22,6 +22,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('hebergement/', views.housing, name='hebergement'),
     path('profil/', views.profil, name='profil'),
+    path('login/', views.login, name='login'),
     path('annonce/', views.browse_ad, name='annonce'),
     path('alerte/', views.alert, name='alerte'),
     path('mon_calendrier/', views.my_calendar, name='mon_calendrier'),
