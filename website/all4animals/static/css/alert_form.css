@@ -32,13 +32,13 @@
 @media (min-width: 992px) {
     .a4_containt_form {
         background: url("../assets/alerte/background.png");
-        background-size: cover;
+        background-size: contain;
         background-repeat: no-repeat;
         padding: 50px;
     }
 
     .a4_container {
-        max-width: 1500px !important;
+        max-width: 75% !important;
         width: 100% !important;
     }
 }
