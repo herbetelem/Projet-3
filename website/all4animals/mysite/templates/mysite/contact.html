@@ -5,7 +5,7 @@ Contact
 {%endblock%}
 
 {% block body%}
-<div class="container">
+<div class="container a4_form_contact">
     <form action="/alerte" method="GET">
         <fieldset>
             <legend>Créer un message</legend>
@@ -19,12 +19,10 @@ Contact
                 <input type="text" class="form-control" id="Subject" aria-describedby="subject"
                     placeholder="Entrer le titre de votre alerte" name="subject">
             </div>
-            <div class="form-group row">
-                <label for="staticreponse" class="col-sm-2 col-form-label">Contact a propos de:</label>
-                <div class="col-sm-10">
-                    <input type="text" readonly="" class="form-control-plaintext" id="staticreponse"
+            <div class="form-group">
+                <label for="staticreponse">Contact a propos de:</label>
+                    <input type="text" readonly="" class="form-control" id="staticreponse"
                         value="Reponse a propos de l'annonce 1220251 'Happy perdu rue saint blaise alencon'">
-                </div>
             </div>
             <div class="form-group">
                 <label for="description">Description de l'animal</label>
