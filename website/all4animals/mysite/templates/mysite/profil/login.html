@@ -1,5 +1,7 @@
 {% extends 'mysite/base.html' %}
 
+
+
 {% block title%}
 Login
 {%endblock%}
@@ -19,7 +21,9 @@ Login
     <form action="/login" method="get" class="login">
         <fieldset>
             <div class="">
-                <img src="" alt="" title="">
+                <a href="/">
+                    <img src="{% static 'assets/nav_footer/logo.png' %}" alt="logo All4animals" title="Logo">
+                </a>
             </div>
 
             <div class="a4_container_login">
