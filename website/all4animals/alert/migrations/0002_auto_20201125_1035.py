@@ -7,7 +7,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('mysite', '0001_initial'),
+        ('alert', '0001_initial'),
     ]
 
     operations = [
@@ -21,6 +21,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='housing_planning',
             name='id_type_animal',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='mysite.type_animal'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='alert.type_animal'),
         ),
     ]

@@ -33,7 +33,7 @@ class Migration(migrations.Migration):
                 ('number', models.IntegerField()),
                 ('start_date', models.DateField()),
                 ('end_date', models.DateField()),
-                ('id_user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='mysite.user')),
+                ('id_user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='alert.user')),
             ],
         ),
     ]
