@@ -15,20 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mysite import views
+from alert import views
+from housing import views as housing_views
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('hebergement/', views.housing, name='hebergement'),
-    path('profil/', views.profil, name='profil'),
-    path('login/', views.login, name='login'),
+    path('profil/', housing_views.profil, name='profil'),
+    path('login/', housing_views.login, name='login'),
     path('annonce/', views.browse_ad, name='annonce'),
     path('alerte/', views.alert, name='alerte'),
-    path('mon_calendrier/', views.my_calendar, name='mon_calendrier'),
-    path('calendrier_user/', views.user_calendar, name='calendrier_user'),
-    path('recherche_hebergement/', views.housing_search, name='recherche_hebergement'),
-    path('se_connecter/', views.login, name='se_connecter'),
+    path('mon_calendrier/', housing_views.my_calendar, name='mon_calendrier'),
+    path('calendrier_user/', housing_views.user_calendar, name='calendrier_user'),
+    path('recherche_hebergement/', housing_views.housing_search, name='recherche_hebergement'),
+    path('hebergement/', housing_views.housing, name='hebergement'),
     path('contact/', views.contact, name='contact'),
 
 ]

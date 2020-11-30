@@ -1,0 +1,111 @@
+{% extends 'alert/base.html' %}
+{% load static %}
+
+{% block link%}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{%endblock%}
+
+{% block script%}
+<script type="text/javascript" src="{% static 'js/login.js' %}"></script>
+{%endblock%}
+
+{% block title%}
+Login
+{%endblock%}
+
+{% block body%}
+<br class=space>
+<div class=a4_login>
+    <div class="a4_menu_login">
+        <ul>
+            <li class="a4_connection">Déjà inscrit ?</li>
+            <li class="a4_registration">Inscription</li>
+        </ul>
+    </div>
+    <div class="a4_login_connection">
+        <form action="/login" method="get">
+            <fieldset>
+
+                <div class="a4_container_login">
+                    <div class="a4_block_login">
+                        <p>Connectez-vous avec votre adresse email et votre mot de passe pour accéder à votre espace
+                            client.
+                        </p>
+
+                    </div>
+                    <div class="a4_block_login">
+                        <label for="uname">Saisissez votre e-mail</label>
+                        <input type="text" placeholder="E-mail" name="uname" required>
+
+                    </div>
+                    <div class="a4_block_login">
+                        <label for="psw">Saisissez votre mot de passe </label>
+                        <input type="password" placeholder="Mot de passe" name="psw" required>
+                    </div>
+                    <div class="a4_block_login">
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember"> Remember me
+                        </label>
+                    </div>
+                    <div class="a4_block_login">
+                        <button type="submit">Connexion</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="a4_login_registration">
+        <form action="/login" method="get">
+            <fieldset>
+
+                <div class="a4_container_login">
+                    <div class="a4_email_pseudo">
+                        <div class="a4_block_login">
+                            <label for="uname">Saisissez votre e-mail</label>
+                            <input type="text" placeholder="E-mail" name="email" required>
+                        </div>
+                        <div class="a4_block_login">
+                            <label for="pseudo">Saisissez votre pseudonyme </label>
+                            <input type="pseudo" placeholder="Pseudonyme" name="pseudo" required>
+                        </div>
+                    </div>
+                    <div class="a4_password">
+                        <div class="a4_block_login">
+                            <label for="psw">Saisissez votre mot de passe </label>
+                            <input type="password" placeholder="Mot de passe" name="psw" required>
+                        </div>
+                    </div>
+                    <div class="a4_address">
+                        <div class="a4_block_login">
+                            <label for="psw">Code postal </label>
+                            <input type="text" placeholder="Code postal" name="postal" required>
+                        </div>
+                        <div class="a4_block_login">
+                            <label>Ville </label>
+                            <select class="" id="" name="reg">
+                                <option value="Alençon">Alençon</option>
+                                <option value="Flers">Flers</option>
+                                <option value="Argentan">Argentan</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="a4_block_login">
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember"> Remember me
+                        </label>
+                    </div>
+                    <div class="a4_block_login">
+                        <button type="submit">Valider</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+</div>
+<br class=space>
+<br class=space>
+<br class=space>
+<br>
+<br>
+{%endblock%}
