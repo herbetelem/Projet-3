@@ -9,20 +9,9 @@ def contact(request):
     return render(request, 'alert/contact.html')
 
 
-
-
-# Folder profil ----------------------------------------------------------
-
-
-
 # Folder alert -----------------------------------------------------------
 def browse_ad(request):
     return render(request, 'alert/browse_ad.html')
 
 def alert(request):
     return render(request, 'alert/alert.html')
-
-
-# Folder hounsing---------------------------------------------------------
-
-
