@@ -4,10 +4,13 @@
 }
 
 .a4_content {
-    padding: 30px;
     background: #fbd5ba;
     border: 1px solid black;
     border-radius: 15px;
+}
+
+.a4_content h2 {
+    margin-bottom: 0 !important;
 }
 
 .a4_month {
@@ -109,4 +112,10 @@
 
 .a4_legend ul .a4_bb_cat {
     background: lightyellow;
+}
+
+.a4_avatar_planing img {
+    width: 100%;
+    margin: auto;
+    margin-top: 5px;
 }
