@@ -73,17 +73,15 @@ TEMPLATES = [
 WSGI_APPLICATION = 'all4animals.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'all4animals',
+#         'NAME': 'postgres',
 #         'USER': 'postgres',
-#         'PASSWORD': 'group12',
-#         'HOST': '127.0.0.1',
-#         'PORT': '5432',
+#         'PASSWORD': 'AdminP3A4A',
+#         'HOST': 'ale-pyt-2006-pjt-p3-all4animals-db.pythonrover.wilders.dev',
+#         'PORT': '15005',
 #     }
 # }
 
