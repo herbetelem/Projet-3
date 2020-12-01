@@ -29,16 +29,28 @@
     padding-bottom: 30px !important;
 }
 
+.a4_block_submit img {
+    display: none;
+}
+
 @media (min-width: 992px) {
     .a4_containt_form {
-        background: url("../assets/alerte/background.png");
+        background: #fbd5ba;
         background-size: contain;
         background-repeat: no-repeat;
         padding: 50px;
+        border: 2px solid black;
+        border-radius: 25px;
     }
 
     .a4_container {
         max-width: 75% !important;
         width: 100% !important;
+    }
+
+    .a4_block_submit img {
+        width: 20%;
+        float: right;
+        display: block;
     }
 }
