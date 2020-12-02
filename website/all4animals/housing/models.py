@@ -1,8 +1,12 @@
 from django.db import models
-# from .alert.models import Type_animal
-# from .alert.models import Gender
+from django.contrib.auth.models import User
 
-# # Create your models here.
+
+
+# Type_animal = apps.get_model('alert', 'Type_animal')
+# Gender = apps.get_model('alert', 'Gender')
+
+# Create your models here.
 
 # class User(models.Model):
 
@@ -14,25 +18,36 @@ from django.db import models
 #     postal_code = models.IntegerField() 
 #     host = models.BooleanField() 
 
-# class Housing_planning(models.Model):
+class User_data(models.Model):
 
-#     id_user = models.ForeignKey(User, on_delete=models.CASCADE)
-#     id_type_animal = models.ForeignKey(Type_animal, on_delete=models.CASCADE)
-#     number = models.IntegerField() 
-#     start_date = models.DateField()
-#     end_date = models.DateField()
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    # New fields
+    address = models.CharField(max_length=300)
+    postal_code = models.IntegerField() 
 
-# class Animal(models.Model):
+    def __str__(self):
+        return f'{User.username}'
 
-#     name = models.CharField(max_length=100)
-#     id_type_animal = models.ForeignKey(Type_animal, on_delete=models.CASCADE)
-#     id_user = models.ForeignKey(User, on_delete=models.CASCADE)
-#     id_gender = models.ForeignKey(Gender, on_delete=models.CASCADE)
-#     commentary = models.CharField(max_length=300)
 
-# class housing_animal(models.Model):
+class Housing_planning(models.Model):
 
-#     id_animal = models.ForeignKey(Animal, on_delete=models.CASCADE)
-#     id_housing_planning = models.ForeignKey(Housing_planning, on_delete=models.CASCADE)
-#     start_date = models.DateField()
-#     end_date = models.DateField()
+    user = models.ForeignKey(User_data, on_delete=models.CASCADE)
+    type_animal = models.ForeignKey('alert.Type_animal', on_delete=models.CASCADE)
+    number = models.IntegerField() 
+    start_date = models.DateField()
+    end_date = models.DateField()
+
+class Animal(models.Model):
+
+    name = models.CharField(max_length=100)
+    type_animal = models.ForeignKey('alert.Type_animal', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    gender = models.ForeignKey('alert.Gender', on_delete=models.CASCADE)
+    commentary = models.CharField(max_length=300)
+
+class Housing_animal(models.Model):
+
+    animal = models.ForeignKey(Animal, on_delete=models.CASCADE)
+    housing_planning = models.ForeignKey(Housing_planning, on_delete=models.CASCADE)
+    start_date = models.DateField()
+    end_date = models.DateField()

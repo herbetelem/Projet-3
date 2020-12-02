@@ -1,0 +1,32 @@
+{% extends 'alert/base.html' %}
+{% load static %}
+
+
+{% block link%}
+<link rel="stylesheet" href="{% static 'static_alert/css/choice_alert.css' %}">
+{%endblock%}
+
+{% block title%}
+Choix d'alerte
+{%endblock%}
+
+{% block body%}
+<section class="all_block">
+    <a href="">
+        <div class="lost">
+        </div>
+    </a>
+    <a href="">
+        <div class="seen">
+        </div>
+    </a>
+    <a href="">
+        <div class="find">
+        </div>
+    </a>
+</section>
+
+
+
+
+{%endblock%}
