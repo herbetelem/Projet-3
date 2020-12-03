@@ -15,3 +15,6 @@ def browse_ad(request):
 
 def alert(request):
     return render(request, 'alert/alert.html')
+
+def choice_alert(request):
+    return render(request, 'alert/choice_alert.html')

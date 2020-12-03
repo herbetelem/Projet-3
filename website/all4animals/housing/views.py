@@ -21,3 +21,5 @@ def housing_search(request):
 
 def my_calendar(request):
     return render(request, 'housing/my_calendar.html')
+
+    

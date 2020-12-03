@@ -19,7 +19,7 @@ from alert import views
 from housing import views as housing_views
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('profil/', housing_views.profil, name='profil'),
     path('login/', housing_views.login, name='login'),
@@ -30,5 +30,6 @@ urlpatterns = [
     path('recherche_hebergement/', housing_views.housing_search, name='recherche_hebergement'),
     path('hebergement/', housing_views.housing, name='hebergement'),
     path('contact/', views.contact, name='contact'),
+    path('choix_alert/', views.choice_alert, name='choix_alert'),
 
 ]
