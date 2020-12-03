@@ -12,9 +12,6 @@ class Type_animal(models.Model):
 
     type = models.CharField(max_length=100)
 
-    class Meta()
-
-
 class Gender(models.Model):
 
     gender = models.CharField(max_length=100)
