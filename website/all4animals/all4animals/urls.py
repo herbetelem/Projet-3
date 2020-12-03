@@ -17,12 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from alert import views
 from housing import views as housing_views
+from registration import views as registration_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('profil/', housing_views.profil, name='profil'),
-    path('login/', housing_views.login, name='login'),
+    path('login/', registration_views.login, name='login'),
     path('annonce/', views.browse_ad, name='annonce'),
     path('alerte/', views.alert, name='alerte'),
     path('mon_calendrier/', housing_views.my_calendar, name='mon_calendrier'),

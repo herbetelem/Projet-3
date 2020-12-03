@@ -6,8 +6,7 @@ from django.shortcuts import render
 def profil(request):
     return render(request, 'housing/profil.html')
 
-def login(request):
-    return render(request, 'housing/login.html')
+
 
 
 def housing(request):
