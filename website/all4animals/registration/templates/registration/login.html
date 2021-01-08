@@ -23,11 +23,9 @@ Login
         </ul>
     </div>
     <div class="a4_login_connection">
-        <form action="/login/" method="POST">
+        <form action="" method="POST">
             {% csrf_token %}
-            <!-- Insérer le formulaire -->
-            {{ form.as_p}}
-            <!-- <fieldset>
+            <fieldset>
 
                 <div class="a4_container_login">
                     <div class="a4_block_login">
@@ -58,24 +56,28 @@ Login
         </form>
     </div>
     <div class="a4_login_registration">
-        <form action="/login" method="get">
+        <form action="/login" method="POST">
+            {% csrf_token %}
             <fieldset>
 
                 <div class="a4_container_login">
                     <div class="a4_email_pseudo">
                         <div class="a4_block_login">
                             <label for="uname">Saisissez votre e-mail</label>
-                            <input type="text" placeholder="E-mail" name="email" required>
+                            <!-- <input type="text" placeholder="E-mail" name="email" required> -->
+                            {{form.email}}
                         </div>
                         <div class="a4_block_login">
                             <label for="pseudo">Saisissez votre pseudonyme </label>
-                            <input type="pseudo" placeholder="Pseudonyme" name="pseudo" required>
+                            {{form.username}}
+                            <!-- <input type="pseudo" placeholder="Pseudonyme" name="pseudo" required> -->
                         </div>
                     </div>
                     <div class="a4_password">
                         <div class="a4_block_login">
                             <label for="psw">Saisissez votre mot de passe </label>
-                            <input type="password" placeholder="Mot de passe" name="psw" required>
+                            <!-- <input type="password" placeholder="Mot de passe" name="psw" required> -->
+                            {{form.password}}
                         </div>
                     </div>
                     <div class="a4_address">
@@ -97,12 +99,13 @@ Login
                             <input type="checkbox" checked="checked" name="remember"> Remember me
                         </label>
                     </div>
+                    <div class="a4_block_login">
+                        <button type="submit">Valider</button>
+                    </div>
 
                 </div>
-            </fieldset> -->
-            <div class="a4_block_login">
-                <button type="submit">Valider</button>
-            </div>
+            </fieldset>
+
         </form>
     </div>
 

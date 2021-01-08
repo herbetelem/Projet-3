@@ -78,5 +78,5 @@ class Alert_user(models.Model):
     class Meta:
 
         verbose_name = "Alert user"
-        verbose_name_plural = "Les alertes d'utilisateurs"
+        verbose_name_plural = "Les alertes utilisateurs"
         ordering = ["user"]

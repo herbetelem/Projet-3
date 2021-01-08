@@ -10,11 +10,11 @@ def contact(request):
 
 
 # Folder alert -----------------------------------------------------------
-def browse_ad(request):
-    return render(request, 'alert/browse_ad.html')
+def alert_user(request):
+    return render(request, 'alert/alert_user.html')
 
 def alert(request):
-    return render(request, 'alert/alert.html')
+    return render(request, 'alert/create_alert.html')
 
 def choice_alert(request):
     return render(request, 'alert/choice_alert.html')

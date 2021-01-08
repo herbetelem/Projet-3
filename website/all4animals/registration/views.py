@@ -9,9 +9,9 @@ def login(request):
     # traiter le requete post
     if request.method =="POST":
     # Instancier la classe formulaire, .save() pour enregistrer les données
-        form = UserForm(request.POST).save()
+        form = UserDjango(request.POST).save()
         # rediriger l'utilisateur
         return redirect('/index')
     else :
-        form = UserForm()
+        form = UserDjango()
     return render(request, 'registration/login.html', {'form' : form} )
