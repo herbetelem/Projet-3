@@ -61,19 +61,21 @@ class Color(models.Model):
 class Alert_user(models.Model):
 
     user = models.ForeignKey('registration.User_data', on_delete=models.CASCADE)
-    animal = models.ForeignKey('housing.Animal', on_delete=models.CASCADE)
+    animal = models.ForeignKey('housing.Animal', on_delete=models.CASCADE, )
     type_alert = models.ForeignKey(Type_alert, on_delete=models.CASCADE)
     gender = models.ForeignKey(Gender, on_delete=models.CASCADE)
     type_animal = models.ForeignKey(Type_animal, on_delete=models.CASCADE)
     color = models.ForeignKey(Color, on_delete=models.CASCADE)
     email = models.EmailField(max_length=70)
+    street = models.CharField(max_length=100)
     postal_code = models.IntegerField() 
     city = models.CharField(max_length=100)
     date = models.DateField()
     commentary = models.CharField(max_length=300)
+    img = models.ImageField(upload_to='cars')
 
     def __str__(self):
-        return self.user
+        return self.animal.name
 
     class Meta:
 

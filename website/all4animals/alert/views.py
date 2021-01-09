@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Alert_user
 
 # Create your views here.
 
@@ -11,7 +12,9 @@ def contact(request):
 
 # Folder alert -----------------------------------------------------------
 def alert_user(request):
-    return render(request, 'alert/alert_user.html')
+    alert = Alert_user.objects.all()
+    alert_user = {'alert_user': alert}
+    return render(request, 'alert/alert_user.html', alert_user)
 
 def alert(request):
     return render(request, 'alert/create_alert.html')

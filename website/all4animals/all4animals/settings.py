@@ -76,17 +76,27 @@ WSGI_APPLICATION = 'all4animals.wsgi.application'
 
 
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'postgres',
+#         'USER': 'postgres',
+#         'PASSWORD': 'AdminP3A4A',
+#         'HOST': 'ale-pyt-2006-pjt-p3-all4animals-db.pythonrover.wilders.dev',
+#         'PORT': '15005',
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
+        'NAME': 'all4animals',
         'USER': 'postgres',
-        'PASSWORD': 'AdminP3A4A',
-        'HOST': 'ale-pyt-2006-pjt-p3-all4animals-db.pythonrover.wilders.dev',
-        'PORT': '15005',
+        'PASSWORD': 'group12',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
-
 
 # DATABASES = {
 #     'default': {

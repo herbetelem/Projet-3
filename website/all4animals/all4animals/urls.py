@@ -22,6 +22,7 @@ from registration import views as registration_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
+    path('', include('alert.urls')),
     path('profil/', housing_views.profil, name='profil'),
     path('login/', registration_views.login, name='login'),
     

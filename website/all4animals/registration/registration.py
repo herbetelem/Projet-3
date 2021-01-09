@@ -7,7 +7,7 @@ class UserForm(ModelForm):
         #Préciser a Django le model choisit
         model =  User_data
         # Préciser les champs a récupérer 
-        fields = ["address", "postal_code"]
+        fields = ["street", "postal_code"]
 
 class UserDjango(ModelForm):
     class Meta:

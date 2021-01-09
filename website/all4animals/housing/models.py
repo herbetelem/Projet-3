@@ -22,7 +22,6 @@ class Animal(models.Model):
 
     name = models.CharField(max_length=100)
     type_animal = models.ForeignKey('alert.Type_animal', on_delete=models.CASCADE)
-    user = models.ForeignKey('registration.User_data', on_delete=models.CASCADE)
     gender = models.ForeignKey('alert.Gender', on_delete=models.CASCADE)
     color = models.ForeignKey('alert.Color', on_delete=models.CASCADE)
     commentary = models.CharField(max_length=300)

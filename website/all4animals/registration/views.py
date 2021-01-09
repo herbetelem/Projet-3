@@ -14,4 +14,4 @@ def login(request):
         return redirect('/index')
     else :
         form = UserDjango()
-    return render(request, 'registration/login.html', {'form' : form} )
+    return render(request, 'registration/login.html')

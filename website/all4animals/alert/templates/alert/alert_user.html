@@ -6,5 +6,10 @@ Parcourir annonce
 
 {% block body%} 
 <h2> Parcourir les annonces </h2>
-<h1>{{}}</h1>
+{%for alert in alert_user%}
+    <h3>{{alert.type_alert}}</h3>
+    <p>{{alert.animal}}</p>
+    <p>{{alert.postal_code}} {{alert.city}}</p>
+{%endfor%}
+<h1>Ca fonctionne pas ?</h1>
 {%endblock%}
