@@ -7,7 +7,8 @@ Alerte
 
 {% block body%}
 <div class="container a4_container">
-    <form action="/alerte" method="GET" class="a4_containt_form">
+    <form action="/alerte/" method="POST" class="a4_containt_form">
+        {% csrf_token %}
         <fieldset>
             <legend>Créer une alerte</legend>
             <div class="form-group">
@@ -50,13 +51,8 @@ Alerte
                 </div>
 
                 <div class="col-4">
-                    <label for="ville">Ville</label>
-                    <select class="form-control" id="ville" name="ville">
-                        <option value="Alencon">Alencon</option>
-                        <option value="Flers">Flers</option>
-                        <option value="Argentan">Argentan</option>
-                        <option value="Surdon">Surdon</option>
-                    </select>
+                    <label for="dep">Ville</label>
+                    {{form.city}}
                 </div>
                 <div class="clearfix"></div>
             </div>
