@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Alert_user
-from .forms import Alert_user_form
+from .forms import Create_user_form
 
 # Create your views here.
 
@@ -18,10 +18,13 @@ def alert_user(request):
     return render(request, 'alert/alert_user.html', alert_user)
 
 def alert(request):
-    form = Alert_user_form()
+    form = Create_user_form()
     if request.method == 'POST':
-        form = Alert_user_form(request.POST)
-        if form.is_valid() :
+        form = Create_user_form(request.POST)
+        result = request.POST
+        for element in result :
+            print(element)
+        if form.is_valid():
             form.save()
 
     context = {'form': form}

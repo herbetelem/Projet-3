@@ -5,11 +5,19 @@ Parcourir annonce
 {%endblock%}
 
 {% block body%} 
+
 <h2> Parcourir les annonces </h2>
-{%for alert in alert_user%}
-    <h3>{{alert.type_alert}}</h3>
-    <p>{{alert.animal}}</p>
-    <p>{{alert.postal_code}} {{alert.city}}</p>
-{%endfor%}
+<div class="a4_all_container">
+    <div class="a4_container">
+        {%for alert in alert_user%}
+            <div class="a4_element">
+                <h3>{{alert.type_alert}}</h3>
+                <img src="{{alert.img}}" alt="">
+                <p>{{alert.city}}</p>
+                <p>{{alert.date}}</p>
+            </div>   
+        {%endfor%}
+    </div>
+</div>
 <h1>Ca fonctionne pas ?</h1>
 {%endblock%}

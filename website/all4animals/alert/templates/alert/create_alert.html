@@ -12,28 +12,35 @@ Alerte
         <fieldset>
             <legend>Créer une alerte</legend>
             <div class="form-group">
+                <label for="Email">Utilisateur</label>
+                {{form.user}}
+            </div>
+            <div class="form-group">
                 <label for="Email">Email</label>
-                <input type="email" class="form-control" id="Email" aria-describedby="email" placeholder="Entrer email"
-                    name="email">
+                <!-- <input type="email" class="form-control" id="Email" aria-describedby="email" placeholder="Entrer email"
+                    name="email"> -->
+                {{form.email}}
             </div>
             <div class="form-group a4_cat_alert">
                 <div class="col-6">
-                    <label for="Subject">Titre de l'alerte</label>
-                    <input type="text" class="form-control" id="Subject" aria-describedby="subject"
-                        placeholder="Entrer le titre de votre alerte" name="subject">
+                    <label for="Subject">Animal</label>
+                    <!-- <input type="text" class="form-control" id="Subject" aria-describedby="subject"
+                        placeholder="Entrer le titre de votre alerte" name="subject"> -->
+                    {{form.animal}}
                 </div>
                 <div class="col-6">
                     <label for="region">Type d'alerte</label>
-                    <select class="form-control" id="alert" name="alert">
+                    <!-- <select class="form-control" id="alert" name="alert">
                         <option value="lost">Animal Perdu</option>
                         <option value="found">Animal Trouvé</option>
                         <option value="see">Animal Vu</option>
-                    </select>
+                    </select> -->
+                    {{form.type_alert}}
                 </div>
                 <div class="clearfix"></div>
             </div>
             <div class="form-group a4_form_place_global">
-                <div class="col-4">
+                <!-- <div class="col-4">
                     <label for="region">Region</label>
                     <select class="form-control" id="reg" name="reg">
                         <option value="Normandie">Normandie</option>
@@ -48,7 +55,7 @@ Alerte
                         <option value="Calvados">Calvados</option>
                         <option value="Manche">Manche</option>
                     </select>
-                </div>
+                </div> -->
 
                 <div class="col-4">
                     <label for="dep">Ville</label>
@@ -57,38 +64,43 @@ Alerte
                 <div class="clearfix"></div>
             </div>
             <div class="form-group a4_form_place_global">
-                <div class="col-4">
+                <!-- <div class="col-4">
                     <label for="Subject">Nom de l'animal</label>
                     <input type="text" class="form-control" id="Name" aria-describedby="name"
                         placeholder="Nom de l'animal (Facultatif)" name="name">
-                </div>
+                    
+                </div> -->
                 <div class="col-4">
                     <label for="region">Animal</label>
-                    <select class="form-control" id="type" name="type">
+                    {{form.type_animal}}
+                    <!-- <select class="form-control" id="type" name="type">
                         <option value="chien">Chien</option>
                         <option value="chat">Chat</option>
                         <option value="chiot">Chiot</option>
                         <option value="chaton">Chaton</option>
-                    </select>
+                    </select> -->
                 </div>
                 <div class="col-4">
                     <label for="sexe">Sexe</label>
-                    <select class="form-control" id="sexe" name="sexe">
+                    {{form.gender}}
+                    <!-- <select class="form-control" id="sexe" name="sexe">
                         <option value="male">Male</option>
                         <option value="femele">Femele</option>
                         <option value="inconue">Inconue</option>
-                    </select>
+                    </select> -->
                 </div>
                 <div class="clearfix"></div>
             </div>
             <div class="form-group">
                 <label for="description">Description de l'animal</label>
-                <textarea class="form-control" id="description" rows="3"
-                    placeholder="Description de l'animal"></textarea>
+                <!-- <textarea class="form-control" id="description" rows="3"
+                    placeholder="Description de l'animal"></textarea> -->
+                {{form.commentary}}
             </div>
             <div class="form-group">
                 <label for="photo">Photo</label>
-                <input type="file" class="form-control-file" id="photo" aria-describedby="fileHelp" name="photo">
+                {{form.img}}
+                <!-- <input type="file" class="form-control-file" id="photo" aria-describedby="fileHelp" name="photo"> -->
             </div>
             <div class="form-group a4_block_submit">
                 <button type="submit" class="btn btn-primary">Valider</button>
