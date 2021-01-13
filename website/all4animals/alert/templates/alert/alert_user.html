@@ -1,21 +1,28 @@
 {% extends 'alert/base.html' %}
+{% load static %}
+
+
+{% block link%} 
+<link rel="stylesheet" href="{% static 'static_alert/css/alert_user.css' %}">
+{%endblock%}
 
 {% block title%} 
 Parcourir annonce
 {%endblock%}
 
 {% block body%} 
-
 <h2> Parcourir les annonces </h2>
 <div class="a4_all_container">
-    <div class="a4_container">
+    <div class="a4_container"> 
         {%for alert in alert_user%}
             <div class="a4_element">
-                <h3>{{alert.type_alert}}</h3>
-                <img src="{{alert.img}}" alt="">
-                <p>{{alert.city}}</p>
-                <p>{{alert.date}}</p>
-            </div>   
+                <a href="{% url 'alert:choix_alert' alert.id %}" >
+                    <h3>{{alert.type_alert}}</h3>
+                    <img src="{{alert.img.url}}" alt="image {{alert.type_animal}}"/>
+                    <p>{{alert.city}}</p>
+                    <p>{{alert.date}}</p>
+                </a> 
+            </div>  
         {%endfor%}
     </div>
 </div>
