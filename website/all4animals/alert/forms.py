@@ -5,3 +5,4 @@ class Create_alert(ModelForm):
     class Meta:
         model = Alert_user
         fields = '__all__'
+        

@@ -33,7 +33,6 @@ urlpatterns = [
     path('calendrier_user/', housing_views.user_calendar, name='calendrier_user'),
     path('recherche_hebergement/', housing_views.housing_search, name='recherche_hebergement'),
     path('hebergement/', housing_views.housing, name='hebergement'),
-    path('contact/', views.contact, name='contact'),
 
     #Lier au formulaire d'authentification django
     path('', include("django.contrib.auth.urls")),

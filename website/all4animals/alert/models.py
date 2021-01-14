@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -60,8 +61,7 @@ class Color(models.Model):
 
 class Alert_user(models.Model):
 
-    user = models.ForeignKey('registration.User_data', on_delete=models.CASCADE)
-    animal = models.ForeignKey('housing.Animal', on_delete=models.CASCADE, )
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     type_alert = models.ForeignKey(Type_alert, on_delete=models.CASCADE)
     gender = models.ForeignKey(Gender, on_delete=models.CASCADE)
     type_animal = models.ForeignKey(Type_animal, on_delete=models.CASCADE)
@@ -75,7 +75,7 @@ class Alert_user(models.Model):
     img = models.ImageField(upload_to='')
 
     def __str__(self):
-        return self.animal.name
+        return self.type_animal.type
 
     class Meta:
 

@@ -12,10 +12,9 @@ class User_data(models.Model):
     street = models.CharField(max_length=300)
     city = models.CharField(max_length=300)
     postal_code = models.IntegerField() 
-    animal = models.ForeignKey('housing.Animal', on_delete=models.CASCADE, null=True)
 
-    # def __str__(self):
-    #     return self.user
+    def __str__(self):
+        return self.user
 
     class Meta:
 

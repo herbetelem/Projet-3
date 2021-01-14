@@ -7,9 +7,10 @@ Alerte
 
 {% block body%}
 <div class="container a4_container">
-    <form action="/alerte/" method="POST" class="a4_containt_form">
+    <form action="/alerte/" method="POST" class="a4_containt_form " enctype="multipart/form-data">
         {% csrf_token %}
         {{form.as_p}}
+
         <div class="form-group a4_block_submit">
             <button type="submit" class="btn btn-primary">Valider</button>
             <img src="{% static 'static_alert\assets\alerte\dog_and_cat.png' %}" alt="dog" title="Alerte">
