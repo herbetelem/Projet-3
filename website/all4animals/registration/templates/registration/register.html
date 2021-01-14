@@ -1,20 +1,19 @@
 
-
 {% extends 'alert/base.html' %}
 {% load static %}
 
 
 {% block link%}
-<link rel="stylesheet" href="{% static 'static_housing/css/login.css' %}">
+<link rel="stylesheet" href="{% static 'static_housing/css/register.css' %}">
 {%endblock%}
 
 {% block script%}
-<script type="text/javascript" src="{% static 'static_housing/js/login.js' %}"></script>
+<script type="text/javascript" src="{% static 'static_housing/js/register.js' %}"></script>
 {%endblock%}
 
 
 {% block title%}
-Login
+Register
 {%endblock%}
 
 {% block body%}
@@ -22,9 +21,7 @@ Login
     <div class="d-flex justify-content-center h-100">
         <div class="user_card">
             <div class="d-flex justify-content-center">
-
-
-                <h3 id="form-title">LOGIN</h3>
+                <h3 id="form-title">REGISTER ACCOUNT</h3>
             </div>
             <div class="d-flex justify-content-center form_container">
                 <form method="POST" action="">
@@ -33,31 +30,39 @@ Login
                         <div class="input-group-append">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                         </div>
-                        <input type="text" name="username" placeholder="Username..." class="form-control">
+                        {{form.username}}
+                    </div>
+                    <div class="input-group mb-2">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fas fa-envelope-square"></i></span>
+                        </div>
+                        {{form.email}}
                     </div>
                     <div class="input-group mb-2">
                         <div class="input-group-append">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
-                            <input type="password" name="password" placeholder="Password..." class="form-control" >
+                        {{form.password1}}
+                    </div>
+                    <div class="input-group mb-2">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        </div>
+                        {{form.password2}}
                     </div>
 
-                        <div class="d-flex justify-content-center mt-3 login_container">
-                            <input class="btn login_btn" type="submit" value="Login">
-                        </div>
+                    <div class="d-flex justify-content-center mt-3 login_container">
+                        <input class="btn login_btn" type="submit" value="Register Account">
+                    </div>
                 </form>
-
             </div>
-
-            {% for message in messages %}
-                <p id="messages">{{message}}</p>
-            {% endfor%}
     
+            {{form.errors}}
+
             <div class="mt-4">
                 <div class="d-flex justify-content-center links">
-                    Don't have an account? <a href="{% url 'register' %}" class="ml-2">Sign Up</a>
+                    Already have an account? <a href="{% url 'login' %}" class="ml-2">Login</a>
                 </div>
-        
             </div>
         </div>
     </div>
