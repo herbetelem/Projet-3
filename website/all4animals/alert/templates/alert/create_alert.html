@@ -5,11 +5,27 @@
 Alerte
 {%endblock%}
 
+{% block link%} 
+<link rel="stylesheet" href="{% static 'static_alert/css/create_alert.css' %}">
+{%endblock%}
+
 {% block body%}
 <div class="container a4_container">
     <form action="/alerte/" method="POST" class="a4_containt_form " enctype="multipart/form-data">
         {% csrf_token %}
-        {{form.as_p}}
+        <div class="user">{{form.user}}</div>
+        {{form.type_alert}}
+        {{form.gender}}
+        {{form.type_animal}}
+        {{form.color}}
+        {{form.email}}
+        {{form.street}}
+        {{form.postal_code}}
+        {{form.city}}
+        {{form.date}}
+        {{form.commentary}}
+        {{form.img}}
+
 
         <div class="form-group a4_block_submit">
             <button type="submit" class="btn btn-primary">Valider</button>

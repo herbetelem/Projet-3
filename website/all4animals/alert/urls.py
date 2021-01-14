@@ -9,5 +9,5 @@ urlpatterns = [
     path('annonce/', views.Alert_view.as_view(), name='annonce'),
     path('annonce/<int:pk>/', views.Alert_detail.as_view(), name='choix_alert'),
     path('alerte/', views.alert, name='alerte'),
-    path('contact/', views.contact, name='contact'),
+    path('/<str:pk>/', views.contact, name='contact'),
 ]

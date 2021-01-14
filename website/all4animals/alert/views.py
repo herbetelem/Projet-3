@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.views import generic
 from .models import Alert_user
-from .forms import Create_alert
+from .forms import Create_alert 
+from django.core.mail import send_mail
 
 from django.contrib.auth.decorators import login_required
 # Create your views here.
@@ -36,19 +37,16 @@ class Alert_detail(generic.DetailView):
 
     model = Alert_user
     template_name = "alert/alert_detail.html"
-
-# class Contact_detail(generic.DetailView):
-#     model = User
     
 def alert(request):
     form = Create_alert()
     if request.method == 'POST':
         form = Create_alert(request.POST, request.FILES)
-        print(request.FILES)
+        print(request.POST)
         if form.is_valid():
             form.save()
-        print()
-        print(f"erreur = {form.errors}")
+    else :
+        form = Create_alert(initial={'user': request.user.id})
 
     context = {'form': form}
     return render(request, 'alert/create_alert.html', context)
@@ -56,4 +54,16 @@ def alert(request):
 
 def choice_alert(request):
     return render(request, 'alert/choice_alert.html')
+
+def contact(request, pk):
+    alert_detail = Alert_user.objects.get(id=pk)
+
+    if request.method == 'POST':
+        object_mail = request.POST['subject']
+        message = request.POST['message']
+        email_user = request.user.email
+        email_alert = alert_detail.user.email
+        send_mail(object_mail, message, email_user, [email_alert])
+    context = {'alert_detail': alert_detail}
+    return render(request, 'alert/contact.html', context)
 
