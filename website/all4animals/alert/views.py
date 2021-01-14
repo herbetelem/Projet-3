@@ -36,12 +36,15 @@ class Alert_detail(generic.DetailView):
 
     model = Alert_user
     template_name = "alert/alert_detail.html"
+
+# class Contact_detail(generic.DetailView):
+#     model = User
     
 def alert(request):
     form = Create_alert()
     if request.method == 'POST':
         form = Create_alert(request.POST, request.FILES)
-        print(request.POST)
+        print(request.FILES)
         if form.is_valid():
             form.save()
         print()
