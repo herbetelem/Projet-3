@@ -70,9 +70,10 @@ class Alert_user(models.Model):
     street = models.CharField(max_length=100)
     postal_code = models.IntegerField() 
     city = models.CharField(max_length=100)
-    date = models.DateField()
+    date = models.DateField(max_length=300)
     commentary = models.CharField(max_length=300)
-    img = models.ImageField(upload_to='cars')
+    # img = models.CharField(max_length=300)
+    img = models.ImageField(upload_to='', null=True)
 
     def __str__(self):
         return self.animal.name
