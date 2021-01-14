@@ -72,8 +72,7 @@ class Alert_user(models.Model):
     city = models.CharField(max_length=100)
     date = models.DateField(max_length=300)
     commentary = models.CharField(max_length=300)
-    # img = models.CharField(max_length=300)
-    img = models.ImageField(upload_to='', null=True)
+    img = models.ImageField(upload_to='')
 
     def __str__(self):
         return self.animal.name
