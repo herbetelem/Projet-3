@@ -21,7 +21,6 @@
         integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
         crossorigin="anonymous"></script>
 
-
     <title>{% block title%} {%endblock%}</title>
 </head>
 
@@ -39,15 +38,19 @@
             <div class="a4_menu_web">
                 <ul class="a4_navbar-menu">
                     <li class="a4_nav-item dropdown">
+                        <a class="a4_nav-link" href="/">Accueil</a>
+                    </li>
+                    <li>|</li>
+                    <li class="a4_nav-item dropdown">
                         <a class="a4_nav-link" href="/alerte">Créer une annonce</a>
                     </li>
                     <li>|</li>
                     <li class="a4_nav-item">
-                        <a class="a4_nav-link" href="/annonce">Parcourir les annonces</a>
+                        <a class="a4_nav-link" href="/annonce_trouver">Trouvé</a>
                     </li>
                     <li>|</li>
                     <li class="a4_nav-item">
-                        <a class="a4_nav-link" href="/hebergement">Hébergement</a>
+                        <a class="a4_nav-link" href="/annonce_perdu">Perdu</a>
                     </li>
                 </ul>
             </div>

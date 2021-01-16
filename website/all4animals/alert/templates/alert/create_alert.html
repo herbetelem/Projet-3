@@ -1,5 +1,6 @@
 {% extends 'alert/base.html' %}
 {% load static %}
+{% load widget_tweaks %}
 
 {% block title%}
 Alerte
@@ -11,10 +12,11 @@ Alerte
 
 {% block body%}
 <div class="container a4_container">
-    <form action="/alerte/" method="POST" class="a4_containt_form " enctype="multipart/form-data">
+    <form action="/alerte/" method="POST" class="a4_containt_form" enctype="multipart/form-data">
         {% csrf_token %}
-        <div class="user">{{form.user}}</div>
-        {{form.type_alert}}
+        {% render_field form.user class="a4_display" %}
+            <label for="">Type d'animal</label>
+            {% render_field form.type_alert class="input" %}
         {{form.gender}}
         {{form.type_animal}}
         {{form.color}}
@@ -23,6 +25,7 @@ Alerte
         {{form.postal_code}}
         {{form.city}}
         {{form.date}}
+        {% render_field form.commentary class="commentary" %}
         {{form.commentary}}
         {{form.img}}
 
