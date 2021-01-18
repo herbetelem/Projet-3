@@ -1,5 +1,6 @@
 {% extends 'alert/base.html' %}
 {% load static %}
+{% load widget_tweaks %}
 
 
 {% block link%} 
@@ -11,15 +12,30 @@ Parcourir annonce
 {%endblock%}
 
 {% block body%} 
-<h2> Parcourir les annonces </h2>
+<h2> Animaux perdu </h2>
 
-<div class="card card-body">
-    <form action="" method="GET">
-        <button class='btn btn-primary' type="submit"> Rechercher</button>
-        <input type="select" value="{{my_filter.form.gender}}">
-    </form>
-</div>
+
 <div class="a4_all_container">
+    <div>
+        <div class="card card-body div_form">
+            <form action="" method="GET">
+                <div class="filter">
+                    <label for="filter">Animal</label>
+                    {% render_field my_filter.form.type_animal class="ad" %}
+                </div>
+                <div class="filter">
+                    <label for="filter">Sexe</label>
+                    {% render_field my_filter.form.gender class="ad" %}
+                </div>
+                <div class="filter">
+                    <label for="filter">Couleur</label>
+                    {% render_field my_filter.form.color class="ad" %}
+                </div>
+                
+                <button class='btn btn-primary' type="submit"> Rechercher</button>
+            </form>
+        </div>
+    </div>
     <div class="a4_container_alert"> 
         {%for alert in alert_user%}
             <div class="a4_element">

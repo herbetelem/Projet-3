@@ -2,7 +2,22 @@
 .a4_all_container{
     width: 70%;
     margin: auto;
+}
 
+form{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.filter{
+    width:20%;
+}
+
+.filter .ad{
+    width: 70%;
+    height: 30px;
 }
 
 .a4_container_alert{
