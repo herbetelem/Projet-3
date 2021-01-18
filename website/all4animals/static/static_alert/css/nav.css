@@ -28,6 +28,10 @@ nav li a:hover {
     float: left;
 }
 
+.block_min_height {
+    min-height: 70vh;
+}
+
 
 /* CSS ABOUT PC ONLY */
 
@@ -64,6 +68,8 @@ nav li a:hover {
         overflow: hidden;
         margin-top: 5px;
     }
+
+
 
     .bar_logout {
         width: 40px;
