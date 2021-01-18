@@ -7,7 +7,7 @@ app_name = "alert"
 urlpatterns = [
     path('', views.index, name='index'),
     path('annonce_perdu/', views.alert_lost_view, name='annonce'),
-    path('annonce_trouver/', views.Alert_find_view.as_view(), name='trouver'),
+    path('annonce_trouver/', views.alert_find_view, name='trouver'),
     path('detail_annonce/<int:pk>/', views.Alert_detail.as_view(), name='choix_alert'),
     path('alerte/', views.alert, name='alerte'),
 ]
