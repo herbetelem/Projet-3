@@ -9,6 +9,8 @@ from django.contrib.auth.decorators import login_required
 
 from .forms import CreateUserForm, CustomerForm
 
+from .models import Customer
+
 # Create your views here.
 
 def loginPage(request):
@@ -48,6 +50,12 @@ def registerPage(request):
                 form.save()
                 user = form.cleaned_data.get('username')
                 messages.success(request, 'Account was created for ' + user)
+                
+                
+                user_created = authenticate(request, username=user, password=form.cleaned_data.get('password1'))
+                customer_data = Customer()
+                customer_data.user = user_created
+                customer_data.save()
 
                 return redirect('login')
 
@@ -58,12 +66,18 @@ def registerPage(request):
 @login_required(login_url='login')
 def accountSettings(request):
     customer = request.user.customer
+    name = customer.name
+    phone = customer.phone
+    img = customer.profile_pic
     form = CustomerForm(instance=customer)
 
     if request.method == 'POST':
         form = CustomerForm(request.POST, request.FILES,instance=customer)
         if form.is_valid():
             form.save()
+            name = customer.name
+            phone = customer.phone
+            img = customer.profile_pic
 
-    context = {'form':form}
+    context = {'form':form, 'name':name, 'phone':phone, 'img':img}
     return render(request, 'registration/account_settings.html', context)
