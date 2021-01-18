@@ -1,23 +1,35 @@
 
 .a4_all_container{
-    margin-left: 20%;
-    margin-right: 20%;
-    border-left: thick double black;
-    border-right: thick double black;
+    width: 70%;
+    margin: auto;
+}
+
+form{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 
 }
 
-.a4_container{
-    width: 80%;
+.filter{
+    width:20%;
+}
+
+.filter .ad{
+    width: 70%;
+    height: 30px;
+}
+
+.a4_container_alert{
     display: flex;
     flex-wrap: wrap;
-    
+    justify-content: space-around;
 }
 
 .a4_element{
-    width: 25%;
+    width: 30%;
     margin:1%;
-    border : 1px solid black;
+    box-shadow: 5px 5px 5px 5px  darkgray;
     border-radius: 15px;
     text-align: center;
 
@@ -26,8 +38,11 @@
 .a4_element p{
     margin:0!important;
     padding:0!important;
+    color: black;
 }
+
 .a4_element img{
-    width : 80%;
-    height: 50%;
+    width : 90%;
+    height: 65%;
 }
+

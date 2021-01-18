@@ -61,7 +61,7 @@ class Color(models.Model):
 
 class Alert_user(models.Model):
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     type_alert = models.ForeignKey(Type_alert, on_delete=models.CASCADE)
     gender = models.ForeignKey(Gender, on_delete=models.CASCADE)
     type_animal = models.ForeignKey(Type_animal, on_delete=models.CASCADE)
