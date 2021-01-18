@@ -7,7 +7,15 @@ Contact
 
 {% block body%}
 <div class="container a4_form_contact">
-    <form action="/alerte" method="GET">
+    <h1>Hello</h1>
+    <h1>{{alert_detail.user.username}}</h1>
+    <h1>{{alert_detail.user.email}}</h1>
+
+
+
+
+    <form action="" method="POST">
+        {% csrf_token %}
         <fieldset>
             <legend>Créer un message</legend>
             <div class="form-group">
@@ -16,23 +24,14 @@ Contact
                     name="email">
             </div>
             <div class="form-group">
-                <label for="Subject">Sujet</label>
+                <label for="Subject">Objet</label>
                 <input type="text" class="form-control" id="Subject" aria-describedby="subject"
                     placeholder="Entrer le titre de votre alerte" name="subject">
             </div>
             <div class="form-group">
-                <label for="staticreponse">Contact a propos de:</label>
-                    <input type="text" readonly="" class="form-control" id="staticreponse"
-                        value="Reponse a propos de l'annonce 1220251 'Happy perdu rue saint blaise alencon'">
-            </div>
-            <div class="form-group">
                 <label for="description">Description de l'animal</label>
-                <textarea class="form-control" id="description" rows="3"
-                    placeholder="Description de l'animal"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="photo">Photo</label>
-                <input type="file" class="form-control-file" id="photo" aria-describedby="fileHelp" name="photo">
+                <input type="text" class="form-control" id="message" aria-describedby="message"
+                placeholder="Description de l'animal" name="message">
             </div>
             <button type="submit" class="btn btn-primary">Valider</button>
         </fieldset>

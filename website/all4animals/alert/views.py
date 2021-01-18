@@ -1,9 +1,12 @@
 from django.shortcuts import render
 from django.views import generic
 from .models import Alert_user
-from .forms import Create_alert
-
+from .forms import Create_alert 
+from django.core.mail import send_mail
+from itertools import chain
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
+from .filters import Alert_user_filter
 # Create your views here.
 
 @login_required(login_url='login')
@@ -22,14 +25,26 @@ def contact(request):
 
 
 
-class Alert_view(generic.ListView):
+def alert_lost_view(request):
+    alert_user = Alert_user.objects.filter(type_alert="1").order_by('date')
+    print(alert_user)
+    my_filter = Alert_user_filter(request.GET, queryset=alert_user)
+    # Modifie le queryset avec le filtre
+    alert_user = my_filter.qs
+    context = {'alert_user': alert_user, 'my_filter':my_filter}
+    return render(request, 'alert/alert_lost.html', context)
 
-    template_name = "alert/alert_user.html"
+class Alert_find_view(generic.ListView):
+
+    template_name = "alert/alert_find.html"
     context_object_name = "alert_user"
 
 
     def get_queryset(self):
-        alert_user = Alert_user.objects.all()
+        seen = Alert_user.objects.filter(type_alert="2").order_by('date')
+        find = Alert_user.objects.filter(type_alert="3").order_by('date')
+        alert_user = sorted(chain(seen,find), key=lambda instance: instance.date)
+        alert_user = list(reversed(alert_user))
         return alert_user
 
 class Alert_detail(generic.DetailView):
@@ -37,18 +52,16 @@ class Alert_detail(generic.DetailView):
     model = Alert_user
     template_name = "alert/alert_detail.html"
 
-# class Contact_detail(generic.DetailView):
-#     model = User
-    
+
 def alert(request):
     form = Create_alert()
     if request.method == 'POST':
         form = Create_alert(request.POST, request.FILES)
-        print(request.FILES)
+        print(request.POST)
         if form.is_valid():
             form.save()
-        print()
-        print(f"erreur = {form.errors}")
+    else :
+        form = Create_alert(initial={'user': request.user.id})
 
     context = {'form': form}
     return render(request, 'alert/create_alert.html', context)
@@ -56,4 +69,16 @@ def alert(request):
 
 def choice_alert(request):
     return render(request, 'alert/choice_alert.html')
+
+def contact(request, pk):
+    alert_detail = Alert_user.objects.get(id=pk)
+
+    if request.method == 'POST':
+        object_mail = request.POST['subject']
+        message = request.POST['message']
+        email_user = request.user.email
+        email_alert = alert_detail.user.email
+        send_mail(object_mail, message, email_user, [email_alert])
+    context = {'alert_detail': alert_detail}
+    return render(request, 'alert/contact.html', context)
 
