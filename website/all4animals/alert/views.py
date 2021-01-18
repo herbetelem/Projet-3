@@ -26,9 +26,9 @@ def contact(request):
 
 
 def alert_lost_view(request):
-    alert_user = Alert_user.objects.filter(type_alert="1")
+    alert_user = Alert_user.objects.filter(type_alert="1").order_by('date')
+    print(alert_user)
     my_filter = Alert_user_filter(request.GET, queryset=alert_user)
-    counter = len(alert_user) / 9
     # Modifie le queryset avec le filtre
     alert_user = my_filter.qs
     context = {'alert_user': alert_user, 'my_filter':my_filter}
