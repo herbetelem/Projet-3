@@ -96,7 +96,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'all4animals',
         'USER': 'postgres',
-        'PASSWORD': 'gtcVqtMu42',
+        'PASSWORD': 'group12',
         'HOST': 'localhost',
         'PORT': '5432',
     }

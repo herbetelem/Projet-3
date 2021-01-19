@@ -61,10 +61,16 @@
                 </div>
                 <div class="a4_menu_show">
                     <ul>
+                        <li><a href="/">Acceuil</a></li>
                         <li><a href="/alerte">Créer une annonce</a></li>
-                        <li><a href="/annonce">Parcourir les annonces</a></li>
-                        <li><a href="/hebergement">Hébergement</a></li>
-                        <li><a href="/contact">Nous contacter</a></li>
+                        <li><a href="/annonce_trouver">Trouvé</a></li>
+                        <li><a href="/annonce_perdu">Perdu</a></li>
+                        {% if user.is_authenticated %}
+                        <li><a href="/login">Page Profil</a></li>
+                        <li><a href="/logout">Deconnexion</a></li>
+                        {% else %}
+                        <li><a href="/login">Connexion</a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
@@ -87,7 +93,9 @@
     <br>
     <br>
     <br>
-    {% block body%} {%endblock%}
+    <div class="block_min_height">
+        {% block body%} {%endblock%}
+    </div>
     <footer class="a4_footer">
         <div class="a4_block_menu">
             <ul>
