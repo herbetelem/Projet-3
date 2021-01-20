@@ -28,6 +28,7 @@ urlpatterns = [
     path('login/', registration_views.loginPage, name='login'),
     path('logout/', registration_views.logoutUser, name='logout'),
     path('register/', registration_views.registerPage, name='register'),
+    path('account/', registration_views.accountSettings, name='account'),
     
     path('mon_calendrier/', housing_views.my_calendar, name='mon_calendrier'),
     path('calendrier_user/', housing_views.user_calendar, name='calendrier_user'),

@@ -21,3 +21,12 @@ class User_data(models.Model):
         verbose_name = "User data"
         verbose_name_plural = "Données d'utilisateurs"
         ordering = ["user"]
+
+class Customer(models.Model):
+    user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
+    name = models.CharField(default="name", max_length=200, null=True)
+    phone = models.CharField(default="tel", max_length=200, null=True)
+    profile_pic = models.ImageField(default="profile1.png", null=True, blank=True)
+
+    def __str__(self):
+        return self.name
