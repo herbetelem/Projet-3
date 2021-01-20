@@ -9,7 +9,7 @@ from django.core.paginator import Paginator
 from .filters import Alert_user_filter
 # Create your views here.
 
-@login_required(login_url='login')
+# @login_required(login_url='login')
 def index(request):
     return render(request, 'alert/index.html')
 
