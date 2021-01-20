@@ -26,26 +26,19 @@ def contact(request):
 
 
 def alert_lost_view(request):
-    alert_user = Alert_user.objects.filter(type_alert="1").order_by('date')
-    print(alert_user)
+    alert_user = Alert_user.objects.filter(type_alert="1").order_by('-date')
     my_filter = Alert_user_filter(request.GET, queryset=alert_user)
-    # Modifie le queryset avec le filtre
     alert_user = my_filter.qs
+    
     context = {'alert_user': alert_user, 'my_filter':my_filter}
     return render(request, 'alert/alert_lost.html', context)
 
-class Alert_find_view(generic.ListView):
-
-    template_name = "alert/alert_find.html"
-    context_object_name = "alert_user"
-
-
-    def get_queryset(self):
-        seen = Alert_user.objects.filter(type_alert="2").order_by('date')
-        find = Alert_user.objects.filter(type_alert="3").order_by('date')
-        alert_user = sorted(chain(seen,find), key=lambda instance: instance.date)
-        alert_user = list(reversed(alert_user))
-        return alert_user
+def alert_find_view(request):
+    alert_user = Alert_user.objects.all().exclude(type_alert="1").order_by('-date')
+    my_filter = Alert_user_filter(request.GET, queryset=alert_user)
+    alert_user = my_filter.qs
+    context = {'alert_user': alert_user,'my_filter':my_filter}
+    return render(request, 'alert/alert_find.html', context)
 
 class Alert_detail(generic.DetailView):
 

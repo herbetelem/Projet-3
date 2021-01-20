@@ -1,4 +1,13 @@
 
+h2{
+    font-size: 4em!important;
+    text-align: center;
+    font-family: 'Potta One', cursive!important;
+    background: #fcd5ba;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 .a4_all_container{
     width: 70%;
     margin: auto;
@@ -8,7 +17,6 @@ form{
     display: flex;
     justify-content: space-around;
     align-items: center;
-
 }
 
 .filter{
@@ -38,7 +46,10 @@ form{
 .a4_element p{
     margin:0!important;
     padding:0!important;
-    color: black;
+}
+
+h3, p{
+    color: black!important; 
 }
 
 .a4_element img{
