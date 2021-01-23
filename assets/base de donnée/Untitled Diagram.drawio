@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-01-23T04:24:56.879Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" etag="S9tc2bbBbJe6j2WVVC-g" version="14.2.6" type="github">
+<mxfile host="app.diagrams.net" modified="2021-01-23T11:33:55.767Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" etag="JXznY7sWupQd6rG6JJl5" version="14.2.6" type="github">
   <diagram id="HxJ3WJx2Mrn2PYJCQ_Yz" name="Page-1">
-    <mxGraphModel dx="1422" dy="774" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="981" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -328,7 +328,7 @@
         <mxCell id="2_vnaBvNwXZS69SpdOoF-126" value="time" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;" vertex="1" parent="2_vnaBvNwXZS69SpdOoF-124">
           <mxGeometry x="114" width="46" height="32" as="geometry" />
         </mxCell>
-        <mxCell id="2_vnaBvNwXZS69SpdOoF-127" value="type_animal" style="shape=table;html=1;whiteSpace=wrap;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fontStyle=1;align=center;fillColor=#fa6800;strokeColor=#C73500;fontColor=#ffffff;" vertex="1" parent="1">
+        <mxCell id="2_vnaBvNwXZS69SpdOoF-127" value="customer" style="shape=table;html=1;whiteSpace=wrap;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fontStyle=1;align=center;fillColor=#fa6800;strokeColor=#C73500;fontColor=#ffffff;" vertex="1" parent="1">
           <mxGeometry x="600" y="410" width="160" height="230" as="geometry" />
         </mxCell>
         <mxCell id="2_vnaBvNwXZS69SpdOoF-128" value="" style="shape=partialRectangle;html=1;whiteSpace=wrap;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="2_vnaBvNwXZS69SpdOoF-127">
