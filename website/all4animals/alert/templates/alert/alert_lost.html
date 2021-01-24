@@ -18,39 +18,54 @@ Parcourir annonce
 
 
 <div class="a4_all_container">
+    
     <h2> Animaux perdu </h2>
     <br/>
-    <div>
-        <div class="card card-body div_form">
-            <form action="" method="GET">
-                <div class="filter">
-                    <label for="filter">Animal</label>
-                    {% render_field my_filter.form.type_animal class="ad" %}
-                </div>
-                <div class="filter">
-                    <label for="filter">Sexe</label>
-                    {% render_field my_filter.form.gender class="ad" %}
-                </div>
-                <div class="filter">
-                    <label for="filter">Couleur</label>
-                    {% render_field my_filter.form.color class="ad" %}
-                </div>
-                
-                <button class='btn btn-primary' type="submit"> Rechercher</button>
-            </form>
-        </div>
+    <div class="card card-body div_form form_filter">
+        <form action="" method="GET">
+            <div class="filter">
+                <div><label for="filter">Animal</label></div>
+                <div>{% render_field my_filter.form.type_animal class="ad" %}</div>
+            </div>
+            <div class="filter">
+                <div><label for="filter">Sexe</label></div>
+                <div>{% render_field my_filter.form.gender class="ad" %}</div>
+            </div>
+            <div class="filter">
+                <div><label for="filter">Couleur</label></div>
+                <div>{% render_field my_filter.form.color class="ad" %}</div>
+            </div>
+            <button class='btn btn-primary' type="submit"> Rechercher</button>
+        </form>
     </div>
     <div class="a4_container_alert"> 
         {%for alert in alert_user%}
-            <div class="a4_element">
+            <div class="a4_element" id="{{alert.img}}">
                 <a href="{% url 'alert:choix_alert' alert.id %}" >
                     <h3>{{alert.type_alert}}</h3>
-                    <img src="{{alert.img.url}}" alt="image {{alert.type_animal}}"/>
+                    <div class="box_img"><img src="{{alert.img.url}}" alt="image {{alert.type_animal}}"/></div>
                     <p>{{alert.city}}</p>
                     <p>{{alert.date}}</p>
                 </a> 
             </div>  
         {%endfor%}
+    </div>
+    <br/>
+    <div class="paginator">
+        <span>
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo;</a>
+                <a href="?page={{ page_obj.previous_page_number }}">&lsaquo;</a>
+            {% endif %}
+    
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">&rsaquo;</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">&raquo;</a>
+            {% endif %}
+        </span>
+        <div>
+            <p>Page {{ page_obj.number }} sur {{ page_obj.paginator.num_pages }}</p>
+        </div>
     </div>
 </div>
 {%endblock%}
