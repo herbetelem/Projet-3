@@ -17,6 +17,13 @@ def contact(request):
     return render(request, 'alert/contact.html')
 
 
+# Folder alert -----------------------------------------------------------
+# def alert_user(request):
+#     alert = Alert_user.objects.all()
+#     alert_user = {'alert_user': alert,}
+#     return render(request, 'alert/alert_user.html', alert_user)
+
+
 
 def alert_lost_view(request):
     alert_user = Alert_user.objects.filter(type_alert="1").order_by('-date')
@@ -30,13 +37,7 @@ def alert_find_view(request):
     alert_user = Alert_user.objects.all().exclude(type_alert="1").order_by('-date')
     my_filter = Alert_user_filter(request.GET, queryset=alert_user)
     alert_user = my_filter.qs
-    paginator = Paginator(alert_user, 9)
-    print(f'paginator {paginator}')
-    page_number = request.GET.get('page')
-    print(f'page number {page_number}')
-    page_obj = paginator.get_page(page_number)
-    print(f'page obj {page_obj}')
-    context = {'my_filter':my_filter, 'page_obj': page_obj}
+    context = {'alert_user': alert_user,'my_filter':my_filter}
     return render(request, 'alert/alert_find.html', context)
 
 class Alert_detail(generic.DetailView):
@@ -44,14 +45,16 @@ class Alert_detail(generic.DetailView):
     model = Alert_user 
     template_name = "alert/alert_detail.html"
 
-@login_required(login_url='login')
+
 def alert(request):
-    
-    form = Create_alert(initial={'user': request.user.id})
+    form = Create_alert()
     if request.method == 'POST':
         form = Create_alert(request.POST, request.FILES)
+        print(request.POST)
         if form.is_valid():
             form.save()
+    else :
+        form = Create_alert(initial={'user': request.user.id})
 
     context = {'form': form}
     return render(request, 'alert/create_alert.html', context)

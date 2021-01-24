@@ -151,6 +151,7 @@ nav li a:hover {
         top: 8vh;
         left: 0;
         height: 42vh;
+        z-index: 9;
     }
     .a4_menu_show ul li {
         width: 100%;
