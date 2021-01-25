@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'alert.apps.AlertConfig',
     'housing.apps.HousingConfig',
     'registration.apps.RegistrationConfig',
+    'core',
     'django_filters',
     'widget_tweaks',
     'crispy_forms',
