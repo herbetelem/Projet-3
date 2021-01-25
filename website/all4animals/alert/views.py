@@ -42,7 +42,7 @@ def alert_find_view(request):
 
 class Alert_detail(generic.DetailView):
 
-    model = Alert_user
+    model = Alert_user 
     template_name = "alert/alert_detail.html"
 
 

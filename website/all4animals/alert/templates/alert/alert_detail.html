@@ -11,6 +11,11 @@ Detail d'une alerte
 {%endblock%}
 
 {% block body%}
+{% if object.type_animal.type == "Perdu"%}
+    <a class="btn btn-info" href="../../annonce_perdu/#{{object.img}}"> Retour</a>
+{%else%}
+    <a class="btn btn-info" href="../../annonce_trouver/#{{object.img}}"> Retour</a>
+{%endif%}
 <br/>
 <div class="a4_container_alert">
     <div class="title_alert">
@@ -40,7 +45,9 @@ Detail d'une alerte
             <p>{{object.city}}</p>
         </div>
     </div>
+    <a href="mailto:{{object.email}}" class="btn btn-primary">Contact</a>
     <br/>
+    <a href="mailto:{{object.email}}" class="btn btn-primary">Contact</a>
     <br/>
     <br/>
     

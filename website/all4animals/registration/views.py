@@ -51,7 +51,7 @@ def registerPage(request):
                 user = form.cleaned_data.get('username')
                 messages.success(request, 'Account was created for ' + user)
                 
-                
+                # create the user into the table Customer
                 user_created = authenticate(request, username=user, password=form.cleaned_data.get('password1'))
                 customer_data = Customer()
                 customer_data.user = user_created
