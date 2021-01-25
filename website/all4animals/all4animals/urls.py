@@ -20,15 +20,14 @@ from django.urls import path, include
 from alert import views
 from housing import views as housing_views
 from registration import views as registration_views
+from core import views as core_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('core.urls')),
     path('', include('alert.urls')),
-    path('profil/', housing_views.profil, name='profil'),
-    path('login/', registration_views.loginPage, name='login'),
-    path('logout/', registration_views.logoutUser, name='logout'),
-    path('register/', registration_views.registerPage, name='register'),
-    path('account/', registration_views.accountSettings, name='account'),
+    path('', include('registration.urls')),
+    
     
     path('mon_calendrier/', housing_views.my_calendar, name='mon_calendrier'),
     path('calendrier_user/', housing_views.user_calendar, name='calendrier_user'),

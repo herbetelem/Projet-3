@@ -10,8 +10,6 @@ from .filters import Alert_user_filter
 # Create your views here.
 
 # @login_required(login_url='login')
-def index(request):
-    return render(request, 'alert/index.html')
 
 def contact(request):
     return render(request, 'alert/contact.html')

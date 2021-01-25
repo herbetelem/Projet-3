@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'alert.apps.AlertConfig',
     'housing.apps.HousingConfig',
     'registration.apps.RegistrationConfig',
+    'core',
     'django_filters',
     'widget_tweaks',
     'crispy_forms',
@@ -96,7 +97,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'all4animals',
         'USER': 'postgres',
-        'PASSWORD': 'gtcVqtMu42',
+        'PASSWORD': 'group12',
         'HOST': 'localhost',
         'PORT': '5432',
     }
