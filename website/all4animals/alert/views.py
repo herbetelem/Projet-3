@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import generic
 from .models import Alert_user
 from .forms import Create_alert 
@@ -48,14 +48,14 @@ class Alert_detail(generic.DetailView):
     model = Alert_user 
     template_name = "alert/alert_detail.html"
 
-
+@login_required(login_url='login')
 def alert(request):
     form = Create_alert(initial={'user': request.user.id})
     if request.method == 'POST':
         form = Create_alert(request.POST, request.FILES)
-        print(request.POST)
         if form.is_valid():
             form.save()
+            return redirect("../annonce_perdu/" if request.POST['type_alert'] == "1" else "../annonce_trouver/")
 
     context = {'form': form}
     return render(request, 'alert/create_alert.html', context)
@@ -75,4 +75,3 @@ def contact(request, pk):
         send_mail(object_mail, message, email_user, [email_alert])
     context = {'alert_detail': alert_detail}
     return render(request, 'alert/contact.html', context)
-
