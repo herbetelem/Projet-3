@@ -12,9 +12,9 @@ Detail d'une alerte
 
 {% block body%}
 {% if object.type_alert.id == 1 %}
-    <a class="btn btn-info" href="../../annonce_perdu"> Retour</a>
+    <a class="btn btn-primary" href="../../annonce_perdu"> &laquo; Retour</a>
 {%else%}
-    <a class="btn btn-info" href="../../annonce_trouver"> Retour</a>
+    <a class="btn btn-primary" href="../../annonce_trouver"> &laquo; Retour</a>
 {%endif%}
 <br/>
 <div class="a4_container_alert">
@@ -45,6 +45,8 @@ Detail d'une alerte
             <p>{{object.city}}</p>
         </div>
     </div>
+    <br/>
+    <br/>
     <a href="mailto:{{object.email}}" class="btn btn-primary">Contact</a>
     <br/>
     <br/>

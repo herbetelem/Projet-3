@@ -34,12 +34,14 @@ def alert_lost_view(request):
     return render(request, 'alert/alert_lost.html', context)
 
 def alert_find_view(request):
+    
     alert_user = Alert_user.objects.all().exclude(type_alert="1").order_by('-date')
     my_filter = Alert_user_filter(request.GET, queryset=alert_user)
-    alert_user = my_filter.qs
-    paginator = Paginator(alert_user, 9)
+
+    paginator = Paginator(my_filter.qs, 9)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
+
     context = {'my_filter':my_filter, 'page_obj': page_obj}
     return render(request, 'alert/alert_find.html', context)
 
