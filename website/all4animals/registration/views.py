@@ -28,7 +28,7 @@ def loginPage(request):
             return redirect('../')
         
         else:
-            messages.info(request, 'Username OR password is incorrect')
+            messages.info(request, 'Nom ou Mot de passe incorrect')
         
         return render(request, 'registration/login.html')
 
@@ -49,7 +49,7 @@ def registerPage(request):
             if form.is_valid():
                 form.save()
                 user = form.cleaned_data.get('username')
-                messages.success(request, 'Account was created for ' + user)
+                messages.success(request, 'Un compte a été pour ' + user)
                 
                 # create the user into the table Customer
                 user_created = authenticate(request, username=user, password=form.cleaned_data.get('password1'))
